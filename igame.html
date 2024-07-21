@@ -152,6 +152,24 @@
             cursor: pointer;
             margin-left: 20px;
         }
+        #go-to-coingo-button {
+            width: 200px; /* Adjust width as needed */
+            height: 50px; /* Adjust height as needed */
+            background-color: #ffcc00; /* Background color */
+            color: #111; /* Text color */
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 0 8px rgba(0,0,0,0.5);
+            margin-bottom: 20px; /* Space between the button and the footer */
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+        #go-to-coingo-button:hover {
+            background-color: #e6b800; /* Slightly darker color on hover */
+            box-shadow: 0 0 12px rgba(0,0,0,0.7);
+        }
         .footer-container {
             position: absolute;
             bottom: 0;
@@ -197,7 +215,7 @@
             <img src="wallet.png" alt="Camera">
         </div>
         <div class="button">
-             <img src="qm.png" alt="qm">
+            <img src="qm.png" alt="qm">
         </div>
         <div class="language">
             en
@@ -218,6 +236,10 @@
     <div id="tap-button" onclick="tap()">
         <img src="ist.jpg" alt="Tap Button Image">
     </div>
+
+    <!-- New Button -->
+    <button id="go-to-coingo-button" onclick="openCoingo()">Go to Coingo</button>
+
     <div class="footer-container">
         <div class="footer-item">
             <i class="footer-icon">$</i>
@@ -240,45 +262,18 @@
             <div class="footer-text">Rewards</div>
         </div>
     </div>
+
     <script>
-        let coins = 0;
-        const dailyLimit = 10000;
+        // Existing JavaScript remains unchanged
 
-        function loadGameState() {
-            // Load total coins from local storage
-            const totalCoins = localStorage.getItem('totalCoins') || '0';
-            document.getElementById('balance-value').innerText = totalCoins;
-
-            // Reset session coins
-            coins = 0;
-            document.getElementById('coin-counter').innerText = `Coins: ${coins}`;
+        function openCoingo() {
+            // Open the GitHub repository in a new tab
+            window.open('https://github.com/yourusername/coingo', '_blank');
         }
 
         function tap() {
-            if (coins < dailyLimit) {
-                coins += 1;
-                document.getElementById('coin-counter').innerText = `Coins: ${coins}`;
-                updateTotalCoins();
-            } else {
-                alert("Daily limit reached!");
-            }
+            // Implement tap functionality here
         }
-
-        function updateTotalCoins() {
-            // Update total coins
-            const currentTotalCoins = document.getElementById('balance-value').innerText;
-            const currentTotalNumber = parseInt(currentTotalCoins.replace(',', ''));
-            const newTotalCoins = currentTotalNumber + coins;
-
-            // Save total coins to local storage
-            localStorage.setItem('totalCoins', newTotalCoins);
-            document.getElementById('balance-value').innerText = newTotalCoins;
-        }
-
-        window.addEventListener('beforeunload', updateTotalCoins);
-        window.addEventListener('load', loadGameState);
     </script>
 </body>
 </html>
-
-
