@@ -33,6 +33,11 @@
             color: #ffcc00; /* Bright color for title */
             text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
             margin: 0 auto;
+            animation: fadeIn 2s ease-in-out; /* Fade in animation */
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1); }
         }
         #logo {
             width: 80px; /* Adjust size as needed */
@@ -89,6 +94,9 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0,0,0,0.7);
             margin-top: 20px;
+        }
+        .container img {
+            border-radius: 50%; /* Make the us1 image round */
         }
         .number {
             font-size: 24px;
@@ -149,7 +157,7 @@
 <body>
     <div id="header">
         <img id="logo" src="ses.png" alt="Logo">
-        <div id="title">IGAMES</div>
+        <div id="title">IGAMES: Quantum Blocks</div>
         <div id="coin-counter">Coins: 0</div>
     </div>
     <div class="container">
