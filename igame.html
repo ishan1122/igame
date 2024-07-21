@@ -15,15 +15,16 @@
             align-items: center;
             height: 100vh;
             position: relative;
+            font-family: 'Arial', sans-serif;
         }
         #title {
             position: absolute;
             top: 10px;
             left: 50%;
             transform: translateX(-50%);
-            font-size: 30px;
-            color: #fff; /* White color */
-            font-family: Arial, sans-serif;
+            font-size: 36px;
+            color: #ffcc00; /* Bright color for title */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
         }
         #logo {
             position: absolute;
@@ -34,46 +35,58 @@
             border-radius: 50%;
             background-color: #fff; /* White background for the circle */
             padding: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.3);
-        }
-        #game-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
         }
         #coin-counter {
-            font-size: 24px;
+            font-size: 28px;
             color: #fff; /* White color */
             background-color: #333; /* Dark background for counter */
-            border-radius: 50%;
-            width: 100px; /* Adjust size as needed */
-            height: 100px; /* Adjust size as needed */
+            border-radius: 10px;
+            width: 120px; /* Adjust size as needed */
+            height: 60px; /* Adjust size as needed */
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 20px;
             position: absolute;
-            top: 10px;
+            top: 100px; /* Adjust position below the logo */
             right: 10px;
+            box-shadow: 0 0 8px rgba(0,0,0,0.5);
         }
-        button {
-            padding: 20px 40px;
-            font-size: 24px;
-            cursor: pointer;
+        #tap-button {
+            position: absolute;
+            bottom: 20px; /* Adjust position from bottom */
+            width: 150px; /* Size of the button */
+            height: 150px; /* Size of the button */
+            border-radius: 50%;
             background-color: #ff9900; /* Colorful button */
-            color: white;
-            border: none;
-            border-radius: 50%; /* Circular button */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 0 12px rgba(0,0,0,0.7);
+            transition: transform 0.2s, box-shadow 0.2s;
+            overflow: hidden;
+        }
+        #tap-button img {
+            width: 80%; /* Size of the image inside the button */
+            height: auto;
+            transition: transform 0.2s;
+        }
+        #tap-button:active {
+            transform: scale(0.95); /* Button scale on click */
+            box-shadow: 0 0 8px rgba(0,0,0,0.5);
+        }
+        #tap-button:active img {
+            transform: scale(1.1); /* Image scale on click */
         }
     </style>
 </head>
 <body>
     <div id="title">IGAMES</div>
     <img id="logo" src="ses.png" alt="Logo">
-    <div id="game-container">
-        <div id="coin-counter">Coins: 0</div>
-        <button onclick="tap()">Tap</button>
+    <div id="coin-counter">Coins: 0</div>
+    <div id="tap-button" onclick="tap()">
+        <img src="ses.png" alt="Tap Button Image">
     </div>
     <script>
         let coins = 0;
