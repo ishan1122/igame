@@ -8,9 +8,7 @@
         body {
             margin: 0;
             padding: 0;
-            background-image: url('images/ksr.jpg'); /* Set background image */
-            background-size: cover; /* Cover the entire viewport */
-            background-position: center; /* Center the background image */
+            background-color: #000; /* Black background */
             overflow: hidden;
             display: flex;
             flex-direction: column;
@@ -67,9 +65,9 @@
             margin-top: 20px;
         }
         #tap-button img {
-            width: 100%; /* Ensure the image covers the button */
-            height: 100%; /* Ensure the image covers the button */
-            border-radius: 50%; /* Match the button's round shape */
+            width: 80%; /* Size of the image inside the button */
+            height: auto;
+            border-radius: 50%;
             transition: transform 0.2s;
         }
         #tap-button:active {
@@ -174,7 +172,7 @@
 </head>
 <body>
     <div id="header">
-        <img id="logo" src="images/ses.png" alt="Logo">
+        <img id="logo" src="ses.png" alt="Logo">
         <div id="coin-counter">Coins: 0</div>
         <div id="title">IGAMES</div>
     </div>
@@ -216,7 +214,7 @@
         </div>
     </div>
     <div id="tap-button" onclick="tap()">
-        <img src="images/ist.jpg" alt="Tap Button Image">
+        <img src="ses.png" alt="Tap Button Image">
     </div>
     <script>
         let coins = 0;
@@ -247,7 +245,8 @@
             document.getElementById('balance-value').innerText = newTotalCoins;
         }
 
-        window.onload = loadGameState;
+        window.addEventListener('beforeunload', updateTotalCoins);
+        window.addEventListener('load', loadGameState);
     </script>
 </body>
 </html>
