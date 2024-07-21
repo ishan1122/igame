@@ -11,26 +11,27 @@
             background-color: #000; /* Black background */
             overflow: hidden;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
             height: 100vh;
-            position: relative;
             font-family: 'Arial', sans-serif;
             color: #fff; /* White color for text */
         }
+        #header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 80%;
+            max-width: 800px; /* Limit width */
+            padding: 10px;
+            position: relative;
+        }
         #title {
-            position: absolute;
-            top: 10px;
-            left: 50%;
-            transform: translateX(-50%);
             font-size: 36px;
             color: #ffcc00; /* Bright color for title */
             text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
         }
         #logo {
-            position: absolute;
-            top: 10px;
-            right: 10px;
             width: 80px; /* Adjust size as needed */
             height: 80px; /* Adjust size as needed */
             border-radius: 50%;
@@ -47,14 +48,9 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            position: absolute;
-            top: 100px; /* Adjust position below the logo */
-            right: 10px;
             box-shadow: 0 0 8px rgba(0,0,0,0.5);
         }
         #tap-button {
-            position: absolute;
-            bottom: 20px; /* Adjust position from bottom */
             width: 150px; /* Size of the button */
             height: 150px; /* Size of the button */
             border-radius: 50%;
@@ -66,10 +62,12 @@
             box-shadow: 0 0 12px rgba(0,0,0,0.7);
             transition: transform 0.2s, box-shadow 0.2s;
             overflow: hidden;
+            margin-top: 20px;
         }
         #tap-button img {
             width: 80%; /* Size of the image inside the button */
             height: auto;
+            border-radius: 50%;
             transition: transform 0.2s;
         }
         #tap-button:active {
@@ -80,17 +78,16 @@
             transform: scale(1.1); /* Image scale on click */
         }
         .container {
-            position: absolute;
             display: flex;
             align-items: center;
             justify-content: space-around;
-            top: 100px; /* Position below the title */
             width: 80%;
-            max-width: 600px; /* Limit width */
+            max-width: 800px; /* Limit width */
             padding: 10px;
             background-color: #111; /* Dark background */
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0,0,0,0.7);
+            margin-top: 20px;
         }
         .number {
             font-size: 24px;
@@ -112,14 +109,72 @@
         .language {
             font-size: 18px;
         }
+        .progress-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 80%;
+            max-width: 800px; /* Limit width */
+            padding: 20px;
+            background-color: #000; /* Black background to match the rest of the page */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.7);
+            margin-top: 20px;
+        }
+        .daily-limit, .balance {
+            display: flex;
+            align-items: center;
+        }
+        .daily-limit-icon, .balance-icon {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+        .daily-limit-value, .balance-value {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .progress-circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #222;
+            position: relative;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-color: #888;
+            position: absolute;
+            top: 0;
+            left: 0;
+            clip-path: polygon(50% 50%, 100% 50%, 50% 100%);
+        }
+        .progress-value {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .progress-button {
+            background-color: #888;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-left: 20px;
+        }
     </style>
 </head>
 <body>
-    <div id="title">IGAMES</div>
-    <img id="logo" src="ses.png" alt="Logo">
-    <div id="coin-counter">Coins: 0</div>
-    <div id="tap-button" onclick="tap()">
-        <img src="ses.png" alt="Tap Button Image">
+    <div id="header">
+        <img id="logo" src="ses.png" alt="Logo">
+        <div id="coin-counter">Coins: 0</div>
+        <div id="title">IGAMES</div>
     </div>
     <div class="container">
         <div>
@@ -141,12 +196,57 @@
             en
         </div>
     </div>
+    <div class="progress-container">
+        <div class="daily-limit">
+            <span class="daily-limit-icon">⚡️</span>
+            <span class="daily-limit-value" id="daily-limit-value">140.4K</span>
+        </div>
+        <div class="progress-circle">
+            <div class="progress-bar"></div>
+            <span class="progress-value">Lvl <br>1</span>
+            <button class="progress-button">1/3 ></button>
+        </div>
+        <div class="balance">
+            <span class="balance-value" id="balance-value">144.06K</span>
+            <span class="balance-icon">
+                <span class="balance-icon-inner">🌀</span>
+            </span>
+        </div>
+    </div>
+    <div id="tap-button" onclick="tap()">
+        <img src="ses.png" alt="Tap Button Image">
+    </div>
     <script>
         let coins = 0;
+
+        function loadGameState() {
+            // Load total coins from local storage
+            const totalCoins = localStorage.getItem('totalCoins') || '144.06K';
+            document.getElementById('balance-value').innerText = totalCoins;
+
+            // Reset session coins
+            coins = 0;
+            document.getElementById('coin-counter').innerText = `Coins: ${coins}`;
+        }
+
         function tap() {
             coins += 1;
             document.getElementById('coin-counter').innerText = `Coins: ${coins}`;
         }
+
+        function updateTotalCoins() {
+            // Update total coins
+            const currentTotalCoins = document.getElementById('balance-value').innerText;
+            const currentTotalNumber = parseFloat(currentTotalCoins.replace('K', '').replace(',', ''));
+            const newTotalCoins = (currentTotalNumber + coins / 1000).toFixed(2) + 'K';
+
+            // Save total coins to local storage
+            localStorage.setItem('totalCoins', newTotalCoins);
+            document.getElementById('balance-value').innerText = newTotalCoins;
+        }
+
+        window.addEventListener('beforeunload', updateTotalCoins);
+        window.addEventListener('load', loadGameState);
     </script>
 </body>
 </html>
