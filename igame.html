@@ -9,30 +9,33 @@
             margin: 0;
             padding: 0;
             background-color: #000; /* Black background */
+            overflow: hidden;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            overflow: hidden;
         }
         #game-container {
-            text-align: center;
+            position: relative;
+            width: 300px;
+            height: 200px;
             background: white;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0,0,0,0.3);
-            position: relative;
-            width: 300px;
-            height: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
-        #logo {
+        #logo-left {
             position: absolute;
             top: 10px;
             left: 10px;
             width: 50px; /* Adjust as needed */
             height: auto;
         }
-        #top-right-logo {
+        #logo-right {
             position: absolute;
             top: 10px;
             right: 10px;
@@ -43,6 +46,9 @@
             font-size: 24px;
             color: #333;
             margin-bottom: 20px;
+            position: absolute;
+            top: 10px;
+            left: 10px;
         }
         button {
             padding: 10px 20px;
@@ -57,8 +63,8 @@
 </head>
 <body>
     <div id="game-container">
-        <img id="logo" src="ses.png" alt="Logo">
-        <img id="top-right-logo" src="ses.png" alt="Logo">
+        <img id="logo-left" src="ses.png" alt="Logo">
+        <img id="logo-right" src="ses.png" alt="Logo">
         <div id="coin-counter">Coins: 0</div>
         <button onclick="tap()">Tap</button>
     </div>
@@ -71,3 +77,4 @@
     </script>
 </body>
 </html>
+
