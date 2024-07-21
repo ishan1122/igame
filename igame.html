@@ -152,6 +152,29 @@
             cursor: pointer;
             margin-left: 20px;
         }
+        .footer-container {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            border-top: 1px solid #333;
+            background-color: #111; /* add a background color to distinguish from the body */
+        }
+        .footer-item {
+            text-align: center;
+            margin: 0 20px;
+            cursor: pointer;
+        }
+        .footer-icon {
+            font-size: 30px;
+        }
+        .footer-text {
+            margin-top: 5px;
+        }
     </style>
 </head>
 <body>
@@ -194,6 +217,28 @@
     </div>
     <div id="tap-button" onclick="tap()">
         <img src="ist.jpg" alt="Tap Button Image">
+    </div>
+    <div class="footer-container">
+        <div class="footer-item">
+            <i class="footer-icon">$</i>
+            <div class="footer-text">Earn</div>
+        </div>
+        <div class="footer-item">
+            <i class="footer-icon">🔗</i>
+            <div class="footer-text">Invite</div>
+        </div>
+        <div class="footer-item">
+            <i class="footer-icon">⚔️</i>
+            <div class="footer-text">Fight</div>
+        </div>
+        <div class="footer-item">
+            <i class="footer-icon">📈</i>
+            <div class="footer-text">Top</div>
+        </div>
+        <div class="footer-item">
+            <i class="footer-icon">🏆</i>
+            <div class="footer-text">Rewards</div>
+        </div>
     </div>
     <script>
         let coins = 0;
