@@ -12,25 +12,27 @@
             background-size: cover; /* Ensure the image covers the entire viewport */
             background-position: center; /* Center the background image */
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
             font-family: 'Arial', sans-serif;
             color: #fff; /* White color for text */
         }
         #header {
             display: flex;
-            flex-direction: column;
             align-items: center;
-            width: 100%;
+            justify-content: space-between;
+            width: 80%;
+            max-width: 800px; /* Limit width */
             padding: 10px;
-            background: rgba(0, 0, 0, 0.7); /* Semi-transparent background for readability */
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            position: relative;
         }
         #title {
             font-size: 36px;
             color: #ffcc00; /* Bright color for title */
             text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
-            margin: 10px 0;
+            margin: 0 auto;
             animation: fadeIn 2s ease-in-out; /* Fade in animation */
         }
         @keyframes fadeIn {
@@ -38,26 +40,25 @@
             100% { opacity: 1; transform: scale(1); }
         }
         #logo {
-            width: 60px; /* Adjust size as needed */
-            height: 60px; /* Adjust size as needed */
+            width: 80px; /* Adjust size as needed */
+            height: 80px; /* Adjust size as needed */
             border-radius: 50%;
             box-shadow: 0 0 10px rgba(0,0,0,0.5);
         }
         #coin-counter {
-            font-size: 24px;
+            font-size: 28px;
             background-color: #333; /* Dark background for counter */
             border-radius: 10px;
-            width: 100px; /* Adjust size as needed */
-            height: 50px; /* Adjust size as needed */
+            width: 120px; /* Adjust size as needed */
+            height: 60px; /* Adjust size as needed */
             display: flex;
             align-items: center;
             justify-content: center;
             box-shadow: 0 0 8px rgba(0,0,0,0.5);
-            margin: 10px 0;
         }
         #tap-button {
-            width: 150px; /* Adjusted size of the button */
-            height: 150px; /* Adjusted size of the button */
+            width: 200px; /* Increased size of the button */
+            height: 200px; /* Increased size of the button */
             border-radius: 50%;
             background-color: #ff9900; /* Colorful button */
             display: flex;
@@ -86,7 +87,7 @@
             display: flex;
             align-items: center;
             justify-content: space-around;
-            width: 100%;
+            width: 80%;
             max-width: 800px; /* Limit width */
             padding: 10px;
             background-color: #111; /* Dark background */
@@ -95,19 +96,17 @@
             margin-top: 20px;
         }
         .container img {
-            border-radius: 50%; /* Make the image round */
-            width: 40px; /* Consistent icon size */
-            height: 40px; /* Consistent icon size */
+            border-radius: 50%; /* Make the us1 image round */
         }
         .number {
-            font-size: 20px;
+            font-size: 24px;
         }
         .button {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             background-color: #222;
             cursor: pointer;
@@ -117,15 +116,15 @@
             height: 20px;
         }
         .language {
-            font-size: 16px;
+            font-size: 18px;
         }
         .progress-container {
             display: flex;
             justify-content: space-around;
             align-items: center;
-            width: 100%;
+            width: 80%;
             max-width: 800px; /* Limit width */
-            padding: 10px;
+            padding: 20px;
             background-color: #000; /* Black background to match the rest of the page */
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0,0,0,0.7);
@@ -136,20 +135,20 @@
             align-items: center;
         }
         .daily-limit-icon, .balance-icon {
-            font-size: 20px;
+            font-size: 24px;
             margin-right: 10px;
         }
         .daily-limit-value, .balance-value {
-            font-size: 20px;
+            font-size: 24px;
             font-weight: bold;
         }
         .progress-button {
             background-color: #888;
             color: #fff;
             border: none;
-            padding: 5px 10px;
+            padding: 10px 20px;
             border-radius: 5px;
-            font-size: 14px;
+            font-size: 16px;
             cursor: pointer;
             margin-left: 20px;
         }
@@ -161,21 +160,20 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 10px;
+            padding: 20px;
             border-top: 1px solid #333;
-            background-color: #111; /* Background color to distinguish from the body */
+            background-color: #111; /* add a background color to distinguish from the body */
         }
         .footer-item {
             text-align: center;
-            margin: 0 15px;
+            margin: 0 20px;
             cursor: pointer;
         }
         .footer-icon {
-            font-size: 24px; /* Adjusted icon size */
+            font-size: 30px;
         }
         .footer-text {
             margin-top: 5px;
-            font-size: 14px; /* Smaller text size for better mobile view */
         }
     </style>
 </head>
@@ -187,7 +185,7 @@
     </div>
     <div class="container">
         <div>
-            <img src="us1.jpeg" alt="Image">
+            <img src="us1.jpeg" alt="Image" width="50">
         </div>
         <div class="number">
             1492438059
@@ -196,10 +194,10 @@
             &gt;
         </div>
         <div class="button">
-            <img src="wallet.png" alt="Wallet">
+            <img src="wallet.png" alt="Camera">
         </div>
         <div class="button">
-             <img src="qm.png" alt="QM">
+             <img src="qm.png" alt="qm">
         </div>
         <div class="language">
             en
@@ -282,4 +280,5 @@
     </script>
 </body>
 </html>
+
 
