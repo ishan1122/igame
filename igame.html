@@ -8,8 +8,9 @@
         body {
             margin: 0;
             padding: 0;
-            background: url('images/ksr.jpg') no-repeat center center fixed;
-            background-size: cover;
+            background-image: url('images/ksr.jpg'); /* Set background image */
+            background-size: cover; /* Cover the entire viewport */
+            background-position: center; /* Center the background image */
             overflow: hidden;
             display: flex;
             flex-direction: column;
@@ -17,8 +18,6 @@
             height: 100vh;
             font-family: 'Arial', sans-serif;
             color: #fff; /* White color for text */
-            position: relative;
-            background-color: rgba(0, 0, 0, 0.5); /* Black fade effect */
         }
         #header {
             display: flex;
@@ -28,7 +27,6 @@
             max-width: 800px; /* Limit width */
             padding: 10px;
             position: relative;
-            z-index: 1;
         }
         #title {
             font-size: 36px;
@@ -58,7 +56,7 @@
             width: 150px; /* Size of the button */
             height: 150px; /* Size of the button */
             border-radius: 50%;
-            background-color: rgba(255, 153, 0, 0.7); /* Colorful button with transparency */
+            background-color: #ff9900; /* Colorful button */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -67,13 +65,11 @@
             transition: transform 0.2s, box-shadow 0.2s;
             overflow: hidden;
             margin-top: 20px;
-            z-index: 1;
         }
         #tap-button img {
-            width: 100%; /* Size of the image inside the button */
-            height: 100%;
-            border-radius: 50%;
-            object-fit: cover; /* Ensure the image covers the button */
+            width: 100%; /* Ensure the image covers the button */
+            height: 100%; /* Ensure the image covers the button */
+            border-radius: 50%; /* Match the button's round shape */
             transition: transform 0.2s;
         }
         #tap-button:active {
@@ -94,8 +90,6 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0,0,0,0.7);
             margin-top: 20px;
-            position: relative;
-            z-index: 1;
         }
         .number {
             font-size: 24px;
@@ -128,8 +122,6 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0,0,0,0.7);
             margin-top: 20px;
-            position: relative;
-            z-index: 1;
         }
         .daily-limit, .balance {
             display: flex;
@@ -188,7 +180,7 @@
     </div>
     <div class="container">
         <div>
-            <img src="images/your-image.jpg" alt="Image" width="50">
+            <img src="path/to/your/image.jpg" alt="Image" width="50">
         </div>
         <div class="number">
             1492438059
@@ -197,7 +189,7 @@
             &gt;
         </div>
         <div class="button">
-            <img src="images/camera.svg" alt="Camera">
+            <img src="path/to/camera.svg" alt="Camera">
         </div>
         <div class="button">
             ?
@@ -255,8 +247,7 @@
             document.getElementById('balance-value').innerText = newTotalCoins;
         }
 
-        window.addEventListener('beforeunload', updateTotalCoins);
-        window.addEventListener('load', loadGameState);
+        window.onload = loadGameState;
     </script>
 </body>
 </html>
