@@ -8,7 +8,8 @@
         body {
             margin: 0;
             padding: 0;
-            background-color: #000; /* Black background */
+            background: url('images/kst.jpg') no-repeat center center fixed;
+            background-size: cover;
             overflow: hidden;
             display: flex;
             flex-direction: column;
@@ -16,6 +17,8 @@
             height: 100vh;
             font-family: 'Arial', sans-serif;
             color: #fff; /* White color for text */
+            position: relative;
+            background-color: rgba(0, 0, 0, 0.5); /* Black fade effect */
         }
         #header {
             display: flex;
@@ -25,6 +28,7 @@
             max-width: 800px; /* Limit width */
             padding: 10px;
             position: relative;
+            z-index: 1;
         }
         #title {
             font-size: 36px;
@@ -54,7 +58,7 @@
             width: 150px; /* Size of the button */
             height: 150px; /* Size of the button */
             border-radius: 50%;
-            background-color: #ff9900; /* Colorful button */
+            background-color: rgba(255, 153, 0, 0.7); /* Colorful button with transparency */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -63,11 +67,13 @@
             transition: transform 0.2s, box-shadow 0.2s;
             overflow: hidden;
             margin-top: 20px;
+            z-index: 1;
         }
         #tap-button img {
-            width: 80%; /* Size of the image inside the button */
-            height: auto;
+            width: 100%; /* Size of the image inside the button */
+            height: 100%;
             border-radius: 50%;
+            object-fit: cover; /* Ensure the image covers the button */
             transition: transform 0.2s;
         }
         #tap-button:active {
@@ -88,6 +94,8 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0,0,0,0.7);
             margin-top: 20px;
+            position: relative;
+            z-index: 1;
         }
         .number {
             font-size: 24px;
@@ -120,6 +128,8 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0,0,0,0.7);
             margin-top: 20px;
+            position: relative;
+            z-index: 1;
         }
         .daily-limit, .balance {
             display: flex;
@@ -172,13 +182,13 @@
 </head>
 <body>
     <div id="header">
-        <img id="logo" src="ses.png" alt="Logo">
+        <img id="logo" src="images/ses.png" alt="Logo">
         <div id="coin-counter">Coins: 0</div>
         <div id="title">IGAMES</div>
     </div>
     <div class="container">
         <div>
-            <img src="path/to/your/image.jpg" alt="Image" width="50">
+            <img src="images/your-image.jpg" alt="Image" width="50">
         </div>
         <div class="number">
             1492438059
@@ -187,7 +197,7 @@
             &gt;
         </div>
         <div class="button">
-            <img src="path/to/camera.svg" alt="Camera">
+            <img src="images/camera.svg" alt="Camera">
         </div>
         <div class="button">
             ?
@@ -214,7 +224,7 @@
         </div>
     </div>
     <div id="tap-button" onclick="tap()">
-        <img src="ses.png" alt="Tap Button Image">
+        <img src="images/ksr.jpg" alt="Tap Button Image">
     </div>
     <script>
         let coins = 0;
