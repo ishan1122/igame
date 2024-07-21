@@ -8,7 +8,9 @@
         body {
             margin: 0;
             padding: 0;
-            background-color: #000; /* Black background */
+            background-image: url('ksr.jpg'); /* Background image */
+            background-size: cover; /* Ensure the image covers the entire viewport */
+            background-position: center; /* Center the background image */
             overflow: hidden;
             display: flex;
             flex-direction: column;
@@ -30,13 +32,12 @@
             font-size: 36px;
             color: #ffcc00; /* Bright color for title */
             text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            margin: 0 auto;
         }
         #logo {
             width: 80px; /* Adjust size as needed */
             height: 80px; /* Adjust size as needed */
             border-radius: 50%;
-            background-color: #fff; /* White background for the circle */
-            padding: 10px;
             box-shadow: 0 0 10px rgba(0,0,0,0.5);
         }
         #coin-counter {
@@ -51,8 +52,8 @@
             box-shadow: 0 0 8px rgba(0,0,0,0.5);
         }
         #tap-button {
-            width: 150px; /* Size of the button */
-            height: 150px; /* Size of the button */
+            width: 200px; /* Increased size of the button */
+            height: 200px; /* Increased size of the button */
             border-radius: 50%;
             background-color: #ff9900; /* Colorful button */
             display: flex;
@@ -173,8 +174,8 @@
 <body>
     <div id="header">
         <img id="logo" src="ses.png" alt="Logo">
-        <div id="coin-counter">Coins: 0</div>
         <div id="title">IGAMES</div>
+        <div id="coin-counter">Coins: 0</div>
     </div>
     <div class="container">
         <div>
@@ -199,7 +200,7 @@
     <div class="progress-container">
         <div class="daily-limit">
             <span class="daily-limit-icon">⚡️</span>
-            <span class="daily-limit-value" id="daily-limit-value">140.4K</span>
+            <span class="daily-limit-value" id="daily-limit-value">10000</span>
         </div>
         <div class="progress-circle">
             <div class="progress-bar"></div>
@@ -218,6 +219,7 @@
     </div>
     <script>
         let coins = 0;
+        const dailyLimit = 10000;
 
         function loadGameState() {
             // Load total coins from local storage
@@ -230,8 +232,13 @@
         }
 
         function tap() {
-            coins += 1;
-            document.getElementById('coin-counter').innerText = `Coins: ${coins}`;
+            if (coins < dailyLimit) {
+                coins += 1;
+                document.getElementById('coin-counter').innerText = `Coins: ${coins}`;
+                updateTotalCoins();
+            } else {
+                alert("Daily limit reached!");
+            }
         }
 
         function updateTotalCoins() {
