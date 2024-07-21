@@ -43,6 +43,12 @@
             height: 100%;
             object-fit: cover; /* Cover the entire logo area */
         }
+        #game-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
         #coin-counter {
             font-size: 24px;
             color: #fff; /* White color */
@@ -54,17 +60,15 @@
             align-items: center;
             justify-content: center;
             position: absolute;
-            top: 80px; /* Adjust position below the logo */
+            top: 100px; /* Adjust position below the logo */
             right: 10px;
             box-shadow: 0 0 8px rgba(0,0,0,0.5);
         }
         #tap-button {
             position: absolute;
-            bottom: 50%;
-            left: 50%;
-            transform: translate(-50%, 50%); /* Center the button horizontally and vertically */
-            width: 200px; /* Size of the button */
-            height: 200px; /* Size of the button */
+            bottom: 20px; /* Adjust position from bottom */
+            width: 150px; /* Size of the button */
+            height: 150px; /* Size of the button */
             border-radius: 50%;
             background-color: #ff9900; /* Colorful button */
             display: flex;
@@ -76,10 +80,9 @@
             overflow: hidden;
         }
         #tap-button img {
-            width: 100px; /* Size of the image inside the button */
-            height: 100px; /* Size of the image inside the button */
+            width: 70%; /* Size of the image inside the button */
+            height: auto;
             border-radius: 50%;
-            object-fit: cover; /* Ensure the image covers the button */
             transition: transform 0.2s;
         }
         #tap-button:active {
@@ -109,4 +112,5 @@
     </script>
 </body>
 </html>
+
 
