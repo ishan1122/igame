@@ -6,38 +6,73 @@
     <title>Tapping Game</title>
     <style>
         body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-color: black; /* Set background to black */
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
+            color: white;
+            font-family: Arial, sans-serif;
+            position: relative; /* Position relative for absolute positioning inside */
         }
+
         #game-container {
             text-align: center;
-            background: white;
+            background: rgba(0, 0, 0, 0.6); /* Semi-transparent background for the container */
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            position: relative; /* Position relative for logo placement */
         }
-        button {
-            padding: 10px 20px;
+
+        #coin-counter {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 24px;
+            font-weight: bold;
+            color: gold;
+        }
+
+        #tap-button {
+            background: linear-gradient(45deg, #ff4081, #ffeb3b);
+            border: none;
+            color: white;
+            padding: 15px 30px;
             font-size: 20px;
             cursor: pointer;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: background 0.3s;
+        }
+
+        #tap-button:hover {
+            background: linear-gradient(45deg, #ffeb3b, #ff4081);
+        }
+
+        #logo {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            width: 100px;
+            height: auto;
         }
     </style>
 </head>
 <body>
     <div id="game-container">
-        <h1>Tapping Game</h1>
-        <p id="coins">Coins: 0</p>
-        <button onclick="tap()">Tap</button>
+        <img id="logo" src="https://example.com/your-uploaded-image.png" alt="Logo">
+        <div id="coin-counter">Coins: 0</div>
+        <button id="tap-button" onclick="tap()">Tap</button>
     </div>
     <script>
         let coins = 0;
+
         function tap() {
             coins += 1;
-            document.getElementById('coins').innerText = `Coins: ${coins}`;
+            document.getElementById('coin-counter').innerText = `Coins: ${coins}`;
         }
     </script>
 </body>
