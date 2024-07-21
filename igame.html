@@ -16,6 +16,7 @@
             height: 100vh;
             position: relative;
             font-family: 'Arial', sans-serif;
+            color: #fff; /* White color for text */
         }
         #title {
             position: absolute;
@@ -39,7 +40,6 @@
         }
         #coin-counter {
             font-size: 28px;
-            color: #fff; /* White color */
             background-color: #333; /* Dark background for counter */
             border-radius: 10px;
             width: 120px; /* Adjust size as needed */
@@ -79,6 +79,39 @@
         #tap-button:active img {
             transform: scale(1.1); /* Image scale on click */
         }
+        .container {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            top: 100px; /* Position below the title */
+            width: 80%;
+            max-width: 600px; /* Limit width */
+            padding: 10px;
+            background-color: #111; /* Dark background */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.7);
+        }
+        .number {
+            font-size: 24px;
+        }
+        .button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #222;
+            cursor: pointer;
+        }
+        .button img {
+            width: 20px;
+            height: 20px;
+        }
+        .language {
+            font-size: 18px;
+        }
     </style>
 </head>
 <body>
@@ -87,6 +120,26 @@
     <div id="coin-counter">Coins: 0</div>
     <div id="tap-button" onclick="tap()">
         <img src="ses.png" alt="Tap Button Image">
+    </div>
+    <div class="container">
+        <div>
+            <img src="path/to/your/image.jpg" alt="Image" width="50">
+        </div>
+        <div class="number">
+            1492438059
+        </div>
+        <div class="button">
+            &gt;
+        </div>
+        <div class="button">
+            <img src="path/to/camera.svg" alt="Camera">
+        </div>
+        <div class="button">
+            ?
+        </div>
+        <div class="language">
+            en
+        </div>
     </div>
     <script>
         let coins = 0;
@@ -97,4 +150,5 @@
     </script>
 </body>
 </html>
+
 
