@@ -14,6 +14,16 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
+            position: relative;
+        }
+        #title {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 30px;
+            color: #fff; /* White color */
+            font-family: Arial, sans-serif;
         }
         #game-container {
             position: relative;
@@ -32,15 +42,21 @@
             position: absolute;
             top: 10px;
             left: 10px;
-            width: 50px; /* Adjust as needed */
-            height: auto;
+            width: 50px; /* Adjust size as needed */
+            height: 50px; /* Adjust size as needed */
+            border-radius: 50%;
+            background-color: #fff; /* Background color for circle */
+            padding: 5px;
         }
         #logo-right {
             position: absolute;
             top: 10px;
             right: 10px;
-            width: 50px; /* Adjust as needed */
-            height: auto;
+            width: 50px; /* Adjust size as needed */
+            height: 50px; /* Adjust size as needed */
+            border-radius: 50%;
+            background-color: #fff; /* Background color for circle */
+            padding: 5px;
         }
         #coin-counter {
             font-size: 24px;
@@ -62,9 +78,10 @@
     </style>
 </head>
 <body>
+    <div id="title">IGAMES</div>
+    <img id="logo-left" src="ses.png" alt="Logo">
+    <img id="logo-right" src="ses.png" alt="Logo">
     <div id="game-container">
-        <img id="logo-left" src="ses.png" alt="Logo">
-        <img id="logo-right" src="ses.png" alt="Logo">
         <div id="coin-counter">Coins: 0</div>
         <button onclick="tap()">Tap</button>
     </div>
@@ -77,4 +94,3 @@
     </script>
 </body>
 </html>
-
