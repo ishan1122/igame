@@ -1,0 +1,42 @@
+.mining-section {
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Align items at the start */
+  justify-content: center; /* Space out content */
+  margin-top: 20px; /* Space above the section */
+}
+
+.mining-info-container {
+  background-color: #4a4a4a; /* Dark gray background */
+  padding: 5px 10px; /* Reduced padding */
+  border-radius: 5px; /* Rounded corners */
+  margin-right: 10px; /* Space between container and GIF */
+  width: 150px; /* Set a fixed width for the container */
+}
+
+.mining-info-container h2,
+.mining-info-container p {
+  margin: 2px 0; /* Minimal margin for text */
+  font-size: 0.9rem; /* Smaller font size */
+}
+
+.mining-gif {
+  width: 130px; /* Smaller width for the GIF */
+  height: 130px; /* Maintain aspect ratio */
+  right: 10px;
+}
+
+.upgrade-buttons {
+  margin-left: 20px; /* Space to the left of buttons */
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically */
+}
+
+.upgrade-button {
+  background-color: #26282b; /* Button color */
+  color: white;
+  padding: 8px; /* Reduced padding */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 5px; /* Space between buttons */
+}

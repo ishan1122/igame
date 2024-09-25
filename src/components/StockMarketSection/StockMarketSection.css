@@ -1,0 +1,32 @@
+/* src/components/StockMarketSection/StockMarketSection.css */
+
+.stock-market-section {
+    background-color: #2d2d2d;
+    padding: 9px;
+    padding-top: 0px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    margin-top: 3px;
+  }
+  
+  .stock-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .buy-button {
+    background-color: #28a745;
+    color: white;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .buy-button:hover {
+    background-color: #218838;
+  }
+  

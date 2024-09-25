@@ -1,0 +1,19 @@
+/* src/index.css */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  height: 100vh; /* Ensure body covers full height */
+  overflow: hidden; /* Optional: hide overflow */
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+.bg-cover {
+  background-image: url('/earth2.png'); /* Path to image in public directory */
+  background-size: cover; /* Cover the entire viewport */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent repeating */
+}
