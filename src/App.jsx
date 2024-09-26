@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import LoadingScreen from './components/LoadingScreen';
+
 import GameScreen from './components/MainScreen';
 import './App.css';
 
