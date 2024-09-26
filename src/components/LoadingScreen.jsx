@@ -1,6 +1,7 @@
 import React from "react";
 import "./LoadingScreen.css";
-import earth2 from "../earth2.jpeg"; // Updated path
+import earthImage from '../Images/earth2.jpeg'; // Ensure correct case and path
+
 
 
 const LoadingScreen = () => {
